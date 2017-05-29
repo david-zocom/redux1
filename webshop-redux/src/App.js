@@ -3,9 +3,7 @@ import React, {	Component } from 'react';
 //import logo from './logo.svg';
 import './App.css';
 import { Constants, /*Actions, Products*/ } from './data.js';
-import {actionProductClick, actionHomeClick} from './actions.js';
-//import {rootReducer/*, changeViewReducer, reducer*/} from './reducers.js';
-import {store} from './index.js';
+import Home from './components/Home'; //Main logic in home component
 /*
 State:
 - products: name, price, (description, picture)
@@ -38,53 +36,6 @@ class App extends Component {
 		}
 	}
 }
-const boundActionHomeClick = () => {
-	//console.log('boundActionHomeClick');
-	store.dispatch(actionHomeClick());
-}
-const boundActionProductClick = (x) => {
-	//console.log('boundActionProductClick');
-	store.dispatch(actionProductClick(x));
-}
-function Home(props) {
-	//console.log('App.js: Home: props:', props);
-	return (
-		<div>
-			<h1>My Redux webshop</h1>
-			<p>View our fine selection of warez. Click one!</p>
-			<ProductList
-				products={props.products}
-				activeView={props.activeView}
-				selectedProduct={props.selectedProduct} />
-		</div>
-	);
-}
-class ProductList extends Component {
-	render() {
-		//console.log('this.props.activeView', this.props.activeView)
-		if( this.props.activeView === Constants.Product ) {
-			return <Product selected={this.props.selectedProduct}/>;
-		}
-		const list = this.props.products.map( x => (
-			<div key={x.name} 
-				onClick={(e) => {boundActionProductClick(x)}} >
-				<span className="productName">{x.name}</span> <br/>
-				<span className="productPrice">{x.price}</span>
-			</div>) );
-		return <div className="productList">{list}</div>;
-	}
-}
-function Product(props) {
-	const x = props.selected;
-	return (
-		<div>
-			<div className="product">
-				<span className="productName">{x.name}</span> <br/>
-				<span className="productPrice">{x.price}</span>
-			</div>
-			<button onClick={() => boundActionHomeClick()}>View all products</button>
-		</div>
-	);
-}
+
 
 export default App;
