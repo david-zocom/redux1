@@ -1,0 +1,59 @@
+.productList {
+	/* should use flexbox */
+}
+.productList > div:hover {
+	background-color: bisque;
+	border-color: black;
+}
+.productList > div {
+	background-color: beige;
+	border: 1px solid darkgray;
+	border-radius: 4px;
+	margin: 12px;
+	padding: 8px;
+	display: inline-block;
+	min-height: 64px;
+	min-width: 64px;
+	text-align: center;
+}
+.productName {
+	font-weight: bold;
+}
+.productPrice {
+	color: red;
+}
+h1 {
+	text-align: center;
+}
+.product {
+	background-color: aliceblue;
+	border: 1px solid darkgray;
+	border-radius: 4px;
+	text-align: center;
+}
+
+/* ------------------------------------------------ */
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
